@@ -1,0 +1,23 @@
+[
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/publications/modifiedHHO/index.html",
+      "/publications/picrypt/index.html",
+      "/publications/cameraSHOT/index.html",
+      "/publications/modifiedRDA-2/index.html",
+      "/publications/modifiedRDA-1/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/Image Stitching/index.html",
+      "/projects/Wiener Filter/index.html",
+      "/projects/Histogram Matching/index.html",
+      "/projects/Non Local Mean/index.html",
+      "/projects/The Magic of Ensemble Algorithms/index.html",
+      "/projects/A Comparative Study Between Different VGG Models/index.html"
+    ]
+  }
+]
