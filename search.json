@@ -63,6 +63,20 @@
     "text": "Software Developer at Institute Management System (IMS)\n  August 2022 to Present\n  \n  Indian Institute of Technology Gandhinagar\n  \n  I am currently employed as a Project Fellow at IIT Gandhinagar, where my role revolves around the Institute Management System (IMS). My responsibilities encompass working with various technologies such as Angular and ASP.NET Core.\n  \n\n\n\n\nResearch Intern \nSept 2020 to Feb 2022\n  \n  Cooch Behar Government Engineering College \n\nLetter of Recommendation\n\n\n\nI dedicated one year and six months to the development and publication of three significant research papers and the acquisition of two copyright registrations. These achievements were realized in the field of computer vision, image processing, and soft computing."
   },
   {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Byte by Byte Vision\n\n\n\n\n\nWelcome to Byte-by-Byte Vision, your go-to platform for high-quality, curated resources in deep learning and computer vision. Learn at your own pace with structured paths, whether you’re a beginner or refining your expertise. Dive in and explore the transformative world of CV!\n\n\n\n\n\n\nSoumyaratna Debnath\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blogs/Byte by Byte Vision/index.html",
+    "href": "blogs/Byte by Byte Vision/index.html",
+    "title": "Byte by Byte Vision",
+    "section": "",
+    "text": "Generic\n\nML Was Hard Until I Learned These 5 Secrets!\nHow I’d learn ML (if I could start over)\nBasic probability: Joint, marginal and conditional probability | Independence\nWhat is Prior And Posterior\nMathematics for Deep Learning Playlist\nMathematics for Deep Learning with Codes\nNeural Networks Implemented From Scratch\n\n\n\nPyTorch and Visualizations\n\nPyTorch Tutorials - Complete Beginner Course\nPyTorch Lightning Tutorial\nComplete TensorBoard Guide\n\n\n\nGraph Neural Networks\n\nGraph Neural Networks - DeepFindr\nGraph Convolutional Networks using only NumPy\nFind the related codes here\n\n\n\nVision Transformers\n\nAttention in transformers, visually explained\nThe Illustrated Transformer\nTransformer Neural Networks Derived from Scratch\nVision Transformer from Scratch\nImplement and Train ViT From Scratch for Image Recognition - PyTorch\nVision Transformer in PyTorch\nFind the related codes here\n\n\n\nGenerative Adversarial Networks\n\nUnderstand the Math and Theory of GANs\nBuilding our first simple GAN\nPix2Pix Paper Walkthrough and implementation from scratch\nCycleGAN Paper Walkthrough and implementation from scratch\nProGAN Paper Walkthrough and implementation from scratch\nSRGAN Paper Walkthrough and implementation from scratch\nStyleGAN Paper Walkthorugh and implementation from scratch\nFind the related codes here\n\n\n\nVariational Autoencoder\n\nVariational Autoencoder Explained\nVariational AutoEncoder Paper Walkthrough and implementation from scratch\nFind the related codes here\n\n\n\nDiffusion Models\n\nDiffusion models explained in 4-difficulty levels\nWhat are Diffusion Models?\nDiffusion Models | Paper Explanation | Math Explained\nDDPM Explained and implementation from scratch\nWhat is Stable Diffusion?\nCoding Stable Diffusion from scratch in PyTorch\n\n\n\nNeural Radiance Field (NeRF) [Coming Soon]\n\nNeural Radiance Fields Paper Explained\n\n\n\nPyTorch Mobile [Coming Soon]"
+  },
+  {
     "objectID": "education.html",
     "href": "education.html",
     "title": "Education",
@@ -74,7 +88,7 @@
     "href": "index.html",
     "title": "Soumyaratna Debnath",
     "section": "",
-    "text": "I am a dedicated and ambitious individual currently pursuing an MTech degree in Computer Science at the prestigious Indian Institute of Technology Gandhinagar. My passion lies in the dynamic realm of Computer Vision, which serves as the focal point of my academic thesis. My research interest includes Rendering based optimization and 3D shape analysis.\n\nIn addition to my academic journey, I served as a Project Fellow at IIT Gandhinagar for 19 Months, where I actively contributed to the Institute Management System (IMS). I worked with an array of technologies such as Angular and ASP.NET Core in my professional responsibilities. These experiences cultivated a diverse skill set and a commitment to technology and software development.\n\nI look forward to contributing and making an impact in the ever-evolving world of computer science and technology."
+    "text": "Bio\n\n\n\n\n\nI am an MTech student in Computer Science at IIT Gandhinagar, where I specialize in Computer Vision, focusing on rendering-based optimization and 3D shape analysis. Currently, I am a researcher in the CVIG Lab at IIT Gandhinagar, delving into cutting-edge projects. In addition to my academic journey, I served as a Project Fellow at IIT Gandhinagar for 19 Months, where I contributed to the Institute Management System using Angular and ASP.NET Core. With a passion for technology and innovation, I am committed to making a significant impact in the ever-evolving field of computer science."
   },
   {
     "objectID": "posts/welcome/index.html",

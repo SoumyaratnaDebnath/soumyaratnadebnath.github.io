@@ -19,5 +19,11 @@
       "/projects/The Magic of Ensemble Algorithms/index.html",
       "/projects/A Comparative Study Between Different VGG Models/index.html"
     ]
+  },
+  {
+    "listing": "/blogs.html",
+    "items": [
+      "/blogs/Byte by Byte Vision/index.html"
+    ]
   }
 ]

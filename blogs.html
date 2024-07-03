@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sandip Dey, Sourav De, Abhirup Deb, Soumyaratna Debnath">
-<meta name="dcterms.date" content="2021-03-15">
 
-<title>Multilevel Image Segmentation Using Modified Red Deer Algorithm</title>
+<title>Blogs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,12 +61,43 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../../styles.css">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -79,33 +110,33 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../education.html" rel="" target="">
+    <a class="nav-link" href="./education.html" rel="" target="">
  <span class="menu-text">Education</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../experience.html" rel="" target="">
+    <a class="nav-link" href="./experience.html" rel="" target="">
  <span class="menu-text">Experience</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
+    <a class="nav-link" href="./publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html" rel="" target="">
+    <a class="nav-link" href="./projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blogs.html" rel="" target="">
+    <a class="nav-link active" href="./blogs.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../documents/Resume-Soumyaratna.pdf" rel="" target="">
+    <a class="nav-link" href="./documents/Resume-Soumyaratna.pdf" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
@@ -116,63 +147,68 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Blogs</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Multilevel Image Segmentation Using Modified Red Deer Algorithm</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Meta-Herustics</div>
-    <div class="quarto-category">Evolutionary Algorithms</div>
-    <div class="quarto-category">Particle Swarm Optimization</div>
-    <div class="quarto-category">Red Deer Algorithm</div>
-    <div class="quarto-category">Multilevel Image Thresholding</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Sandip Dey, Sourav De, Abhirup Deb, Soumyaratna Debnath </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 15, 2021</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
 
 
-DOI : <a style="text-decoration: none;" href="https://doi.org/10.1109/Confluence51648.2021.9377112">10.1109/Confluence51648.2021.9377112</a>
 
-<img src="image.png" style="width:100%; margin:20px 0px;">
 
-<div class="align-justify" style="margin-top: 20px;">
-<b>Published in -</b> 2021 11th International Conference on Cloud Computing, Data Science &amp; Engineering (Confluence)
-<br><br>
-In this paper, an evolution strategy based, Modified Red Deer Algorithm (MRDA) has been proposed to find optimum thresholds of publicly available gray scale images. In the recent year, the activity of red deers has been thoroughly observed in the course of their breading season by a group of researchers. Later, this inspired them to introduce a renowned meta-heuristic, popularly known as Red Deer Algorithm (RDA). The RDA is capable to handle several combinatorial optimization problems of various real-world applications. In this paper, a number of adaptive strategy has been suggested to alter the intrinsic operators and parameters used in RDA to improve its performance. The efficiency of MRDA has been judged with RDA and classical Particle Swarm Optimization (PSO) using two publicly accessible real world benchmark images. The performance of each of the competitive method has been analysed with regards to a variety of measure quantitatively and visually. Finally, as a statistical comparison, Kruskal-Wallis test has been carried out between the proposed method and others. The obtained results prove that MRDA is the best performing method than others in all aspects and provides immensely competitive results
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1720033856693" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./blogs/Byte by Byte Vision/index.html"> <img src="./blogs/Byte by Byte Vision/image.jpg" class="thumbnail-image"> </a></p>
 </div>
+<div class="body">
+<a href="./blogs/Byte by Byte Vision/index.html">
+<h3 class="no-anchor listing-title">
+Byte by Byte Vision
+</h3>
+<div class="listing-subtitle">
 
-
-
-</main> <!-- /main -->
+</div>
+<div class="listing-description">
+<p>Welcome to Byte-by-Byte Vision, your go-to platform for high-quality, curated resources in deep learning and computer vision. Learn at your own pace with structured paths, whether you’re a beginner or refining your expertise. Dive in and explore the transformative world of CV!</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./blogs/Byte by Byte Vision/index.html">
+<div class="listing-author">
+Soumyaratna Debnath
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
