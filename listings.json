@@ -19,22 +19,20 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/Vision Trasformer from Scratch/index.html",
-      "/projects/The Rail Guardians/index.html",
-      "/projects/Image Stitching from Scratch/index.html",
-      "/projects/Wiener Filter from Scratch/index.html",
-      "/projects/Code Meets Art/index.html",
-      "/projects/Evolutionary Artistry/index.html",
-      "/projects/Histogram Matching from Scratch/index.html",
-      "/projects/Non Local Mean from Scratch/index.html",
-      "/projects/The Crafted Nest/index.html",
-      "/projects/The Magic of Ensemble Algorithms/index.html",
-      "/projects/KNN Viusalizer/index.html",
-      "/projects/VGG Compared/index.html",
-      "/projects/Underwater Object Detection/index.html",
-      "/projects/October Virtual Mouse/index.html",
-      "/projects/Picrypt/index.html",
-      "/projects/CameraSHOT/index.html"
+      "/projects/000 The Crafted Nest/index.html",
+      "/projects/001 Vision Trasformer from Scratch/index.html",
+      "/projects/002 The Rail Guardians/index.html",
+      "/projects/003 Evolutionary Artistry/index.html",
+      "/projects/004 Picrypt/index.html",
+      "/projects/005 Code Meets Art/index.html",
+      "/projects/006 Underwater Object Detection/index.html",
+      "/projects/007 VGG Compared/index.html",
+      "/projects/008 The Magic of Ensemble Algorithms/index.html",
+      "/projects/009 KNN Viusalizer/index.html",
+      "/projects/010 Image Stitching from Scratch/index.html",
+      "/projects/011 Histogram Matching from Scratch/index.html",
+      "/projects/012 CameraSHOT/index.html",
+      "/projects/013 October Virtual Mouse/index.html"
     ]
   }
 ]
