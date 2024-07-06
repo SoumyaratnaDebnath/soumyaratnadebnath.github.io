@@ -4,7 +4,6 @@
     "items": [
       "/publications/modifiedHHO/index.html",
       "/publications/picrypt/index.html",
-      "/publications/cameraSHOT/index.html",
       "/publications/modifiedRDA-2/index.html",
       "/publications/modifiedRDA-1/index.html"
     ]
@@ -12,18 +11,29 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/Vision Trasformer/index.html",
+      "/projects/The-Rail-Guardians/index.html",
       "/projects/Image Stitching/index.html",
       "/projects/Wiener Filter/index.html",
+      "/projects/Code-Meets-Art/index.html",
+      "/projects/Evolutionary Artistry/index.html",
       "/projects/Histogram Matching/index.html",
       "/projects/Non Local Mean/index.html",
       "/projects/The Magic of Ensemble Algorithms/index.html",
-      "/projects/A Comparative Study Between Different VGG Models/index.html"
+      "/projects/KNN Viusalizer/index.html",
+      "/projects/A Comparative Study Between Different VGG Models/index.html",
+      "/projects/Underwater-Image-Enhancement-and-Object-Detection-using-MIRNet-and-YOLO-main/index.html",
+      "/projects/October-VM/index.html",
+      "/projects/Picrypt/index.html",
+      "/projects/CameraSHOT/index.html"
     ]
   },
   {
     "listing": "/blogs.html",
     "items": [
-      "/blogs/Byte by Byte Vision/index.html"
+      "/blogs/Byte by Byte Vision/index.html",
+      "/blogs/Topic-On-Games-Class-Notes/index.html",
+      "/blogs/IITGN-Algorithms-Class-Notes/index.html"
     ]
   }
 ]

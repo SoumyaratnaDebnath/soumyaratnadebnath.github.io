@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soumyaratna Debnath">
+<meta name="dcterms.date" content="2022-07-07">
+<meta name="description" content="Underwater Image Enhancement and Object Detection using MIRNet and YOLO algorithms.">
+
+<title>Underwater Object Detection</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../badge-sd-fill.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../education.html" rel="" target="">
+ <span class="menu-text">Education</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../experience.html" rel="" target="">
+ <span class="menu-text">Experience</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blogs.html" rel="" target="">
+ <span class="menu-text">Blogs</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../documents/Resume-Soumyaratna.pdf" rel="" target="">
+ <span class="menu-text">Resume</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
+  <li><a href="#yolo-object-detection" id="toc-yolo-object-detection" class="nav-link" data-scroll-target="#yolo-object-detection">YOLO Object Detection</a></li>
+  <li><a href="#methodology-1" id="toc-methodology-1" class="nav-link" data-scroll-target="#methodology-1">Methodology</a></li>
+  <li><a href="#benefits-of-yolo" id="toc-benefits-of-yolo" class="nav-link" data-scroll-target="#benefits-of-yolo">Benefits of YOLO</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Underwater Object Detection</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Object Detection</div>
+    <div class="quarto-category">Image Enhancement</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Underwater Image Enhancement and Object Detection using MIRNet and YOLO algorithms.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Soumyaratna Debnath </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 7, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p><a href="https://github.com/SoumyaratnaDebnath/Underwater-Image-Enhancement-and-Object-Detection-using-MIRNet-and-YOLO" style="text-decoration: none;"> <i class="bi bi-github"></i> <span class="about-link-text">GitHub</span> </a></p>
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p style="text-align:justify;">
+With the goal of recovering high-quality image content from its degraded version, image restoration finds numerous applications in fields such as surveillance, computational photography, medical imaging, and remote sensing. Recently, convolutional neural networks (CNNs) have significantly improved the image restoration process. Conventional CNN-based methods typically operate either on full-resolution or progressively low-resolution representations. While the former achieves spatial precision but lacks contextual robustness, the latter provides semantically reliable but spatially less accurate outputs. MIRNet is a novel architecture designed to maintain spatially precise high-resolution representations throughout the network while extracting strong contextual information from low-resolution representations. The core approach involves a multi-scale residual block featuring parallel multi-resolution convolution streams, information exchange across these streams, spatial and channel attention mechanisms, and attention-based multi-scale feature aggregation. This approach learns enriched features that combine contextual information from multiple scales while preserving high-resolution spatial details. The source code and pre-trained models are available at the MIRNet repository: https://github.com/swz30/MIRNet.
+</p>
+</section>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p style="text-align:justify;">
+Image restoration and enhancement are critical tasks in computer vision, aimed at recovering high-quality images from degraded inputs. Applications of these tasks span across various fields including surveillance, computational photography, medical imaging, and remote sensing. Traditional image restoration pipelines often utilize either full-resolution processing or encoder-decoder architectures. While full-resolution processing retains precise spatial details, encoder-decoder architectures offer better contextual representations. However, these methods fail to satisfy both requirements simultaneously, which is essential for real-world image restoration tasks.
+</p>
+</section>
+<section id="methodology" class="level3">
+<h3 class="anchored" data-anchor-id="methodology">Methodology</h3>
+<section id="mirnet-architecture" class="level4">
+<h4 class="anchored" data-anchor-id="mirnet-architecture">MIRNet Architecture</h4>
+<p style="text-align:justify;">
+MIRNet introduces a novel architecture that integrates the benefits of both full-resolution processing and multi-scale feature extraction. The main branch of MIRNet is dedicated to full-resolution processing, ensuring spatial precision. Complementary parallel branches provide enhanced contextual features. The architecture employs multi-scale residual blocks containing several key elements: parallel multi-resolution convolution streams for multi-scale feature extraction, information exchange across these streams, spatial and channel attention mechanisms to capture contextual information, and attention-based multi-scale feature aggregation.
+</p>
+</section>
+<section id="multi-scale-residual-block" class="level4">
+<h4 class="anchored" data-anchor-id="multi-scale-residual-block">Multi-Scale Residual Block</h4>
+<p style="text-align:justify;">
+The multi-scale residual block is the cornerstone of MIRNet’s architecture. It extracts features at multiple scales through parallel convolution streams, allowing the network to capture both fine details and broader contextual information. Information exchange across these streams ensures a comprehensive understanding of the image, while spatial and channel attention mechanisms highlight relevant features, facilitating effective feature aggregation and improved restoration quality.
+</p>
+</section>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
+<section id="full-resolution-and-multi-scale-processing" class="level4">
+<h4 class="anchored" data-anchor-id="full-resolution-and-multi-scale-processing">Full-Resolution and Multi-Scale Processing</h4>
+<p style="text-align:justify;">
+MIRNet processes the image in full resolution through its main branch, retaining spatial details. Simultaneously, parallel branches operate at multiple scales, capturing contextual information. The integration of features from these branches results in a comprehensive restoration approach that combines spatial precision with contextual robustness.
+</p>
+</section>
+<section id="attention-mechanisms" class="level4">
+<h4 class="anchored" data-anchor-id="attention-mechanisms">Attention Mechanisms</h4>
+<p style="text-align:justify;">
+Spatial and channel attention mechanisms play a crucial role in MIRNet’s architecture. These mechanisms enable the network to focus on important regions and features within the image, enhancing the overall restoration process. By leveraging attention mechanisms, MIRNet can effectively combine multi-scale features, resulting in high-quality restored images.
+</p>
+</section>
+</section>
+<section id="results-and-discussion" class="level3">
+<h3 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h3>
+<p style="text-align:justify;">
+MIRNet’s architecture demonstrates significant improvements in image restoration and enhancement tasks. By combining full-resolution processing with multi-scale feature extraction, the network achieves a balance between spatial precision and contextual robustness. The attention mechanisms further enhance the restoration quality, ensuring high-resolution details and enriched contextual information.
+</p>
+<p><img src="Enhancement-Samples.png" class="img-fluid"></p>
+</section>
+<section id="yolo-object-detection" class="level3">
+<h3 class="anchored" data-anchor-id="yolo-object-detection">YOLO Object Detection</h3>
+<p style="text-align:justify;">
+YOLO, an abbreviation for ‘You Only Look Once,’ is a cutting-edge algorithm designed for real-time object detection and recognition. By treating object detection as a regression problem, YOLO predicts class probabilities and bounding boxes with a single forward pass through a convolutional neural network (CNN). This approach enables YOLO to perform object detection efficiently and accurately, making it a preferred choice for various applications in computer vision.
+</p>
+</section>
+<section id="methodology-1" class="level3">
+<h3 class="anchored" data-anchor-id="methodology-1">Methodology</h3>
+<section id="yolo-architecture" class="level4">
+<h4 class="anchored" data-anchor-id="yolo-architecture">YOLO Architecture</h4>
+<p style="text-align:justify;">
+YOLO’s architecture processes the entire image in a single pass, dividing it into an (N N) grid. For each grid cell, YOLO predicts multiple bounding boxes and class probabilities. This fully convolutional approach contrasts with traditional region proposal networks, which require multiple predictions for various regions in the image. YOLO’s single-pass method significantly enhances detection speed and efficiency.
+</p>
+</section>
+<section id="regression-approach" class="level4">
+<h4 class="anchored" data-anchor-id="regression-approach">Regression Approach</h4>
+<p style="text-align:justify;">
+By reframing object detection as a regression problem, YOLO maps image pixels directly to bounding box coordinates and class probabilities. This global reasoning allows YOLO to capture contextual information about object classes and appearances, reducing background errors and improving detection accuracy. The network’s ability to reason globally about the image context enhances its performance compared to traditional methods.
+</p>
+</section>
+</section>
+<section id="benefits-of-yolo" class="level3">
+<h3 class="anchored" data-anchor-id="benefits-of-yolo">Benefits of YOLO</h3>
+<section id="speed-and-efficiency" class="level4">
+<h4 class="anchored" data-anchor-id="speed-and-efficiency">Speed and Efficiency</h4>
+<p style="text-align:justify;">
+YOLO’s primary advantage is its speed. By processing the image in a single pass, YOLO can perform real-time object detection, making it suitable for applications requiring fast response times. The simplified detection pipeline further enhances efficiency, allowing the algorithm to handle high-resolution images and complex scenes effectively.
+</p>
+</section>
+<section id="global-reasoning" class="level4">
+<h4 class="anchored" data-anchor-id="global-reasoning">Global Reasoning</h4>
+<p style="text-align:justify;">
+YOLO’s global reasoning capability leads to more accurate predictions. Unlike sliding window and region proposal-based techniques, YOLO considers the entire image context during both training and testing. This comprehensive approach reduces background errors and improves object localization, enabling YOLO to differentiate objects from their surroundings more effectively.
+</p>
+</section>
+<section id="generalization" class="level4">
+<h4 class="anchored" data-anchor-id="generalization">Generalization</h4>
+<p style="text-align:justify;">
+YOLO excels in learning generalizable representations of objects. When trained on natural images, YOLO outperforms other top detection methods, such as DPM and R-CNN, in diverse domains, including artwork. This robust generalization capability ensures that YOLO performs well even when applied to new and unexpected inputs, making it a versatile tool for various object detection tasks.
+</p>
+</section>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p style="text-align:justify;">
+YOLO utilizes features from the entire image to predict each bounding box and class probability simultaneously. This design allows the network to maintain high average precision while achieving real-time detection speeds. The ability to train and optimize on full images directly enhances the overall detection performance.
+</p>
+<p><img src="Detection-Samples.png" class="img-fluid"></p>
+</section>
+<section id="dataset-description" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-description">Dataset Description</h3>
+<p style="text-align:justify;">
+For training YOLO, the Brackish Underwater Dataset is utilized. This dataset is the first publicly available European underwater image dataset with bounding box annotations of fish, crabs, and other marine organisms. Recorded in Limfjorden, a brackish strait in northern Denmark, the dataset offers a unique set of underwater images captured using a camera setup consisting of three cameras and three LED lights mounted on a concrete pillar of the Limfjords bridge. Currently, only data from one camera has been annotated and published, with more expected to be added. The setup, located 9 meters below the surface, operates with a single LED light during recordings, influencing the behavior of marine animals, such as the schooling of sticklebacks directly in front of the camera.
+</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p style="text-align:justify;">
+YOLO stands out as a groundbreaking object detection algorithm that combines speed, accuracy, and generalization. By treating object detection as a regression problem and leveraging a fully convolutional neural network, YOLO simplifies the detection process while enhancing performance. The use of the Brackish Underwater Dataset for training highlights YOLO’s applicability to diverse environments and its potential for various real-world applications. The algorithm’s ability to perform real-time detection with high precision makes it a valuable tool in the field of computer vision.
+</p>
+</section>
+<section id="future-work" class="level3">
+<h3 class="anchored" data-anchor-id="future-work">Future Work</h3>
+<p style="text-align:justify;">
+Future improvements to YOLO could involve refining the network architecture to enhance detection accuracy and speed further. Exploring additional datasets and domains will also help validate and extend YOLO’s capabilities. Integrating more advanced techniques, such as attention mechanisms and multi-scale feature extraction, could further boost the algorithm’s performance in complex scenarios.
+</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
