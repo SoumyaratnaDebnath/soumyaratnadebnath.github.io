@@ -72,9 +72,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-date','listing-description','listing-journal_name','listing-image','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -148,98 +148,256 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Publications</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Publications</h1>
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Computer Graphics,Scribble Art" data-listing-date-sort="1734460200000" data-listing-file-modified-sort="1736592998340" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./publications/l3dpose/index.html"> <img src="./publications/l3dpose/teaser.jpg" class="thumbnail-image"> </a></p>
 </div>
+<div class="body">
+<a href="./publications/l3dpose/index.html">
+<h3 class="no-anchor listing-title">
+L3D-Pose: Lifting Pose for 3D Avatars from a Single Camera in the Wild
+</h3>
+<div class="listing-subtitle">
 
+</div>
+<div class="listing-description">
+<p>2D pose estimation helps analyze animal movements but lacks depth, while 3D pose estimation is limited by the difficulty of creating datasets. We address this with a hybrid approach using rigged avatars to generate synthetic 3D data. Our lightweight attention-based MLP converts 2D poses to 3D, scalable for natural environments. This framework bridges 2D to 3D pose estimation and retargets wild movements onto avatars.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/l3dpose/index.html">
+<div class="listing-date">
+Dec 18, 2024
+</div>
+<div class="listing-author">
+Soumyaratna Debnath, Harish Katti, Shashikant Verma, Shanmuganathan Raman
+</div>
+<div class="metadata-value listing-journal_name">
+<b>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP) 2025</b>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Computer Graphics,Scribble Art" data-listing-date-sort="1726684200000" data-listing-file-modified-sort="1736592543339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./publications/scribgen/index.html"> <img src="./publications/scribgen/teaser.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./publications/scribgen/index.html">
+<h3 class="no-anchor listing-title">
+ScribGen: Generating Scribble Art Through Metaheuristics
+</h3>
+<div class="listing-subtitle">
 
+</div>
+<div class="listing-description">
+<p>While many methods bridge sketches and images, few turn images into expressive scribbles. Our work explores this untapped potential using metaheuristics instead of traditional GAN-based approaches. By analyzing various algorithms, we show they strike a unique balance between creativity and efficiency, outperforming state-of-the-art models in generating meaningful scribble art from images.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/scribgen/index.html">
+<div class="listing-date">
+Sep 19, 2024
+</div>
+<div class="listing-author">
+Soumyaratna Debnath, Ashish Tiwari, Shanmuganathan Raman
+</div>
+<div class="metadata-value listing-journal_name">
+<b>ACM SIGGRAPH Asia 2024</b>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Meta-Herustics,Evolutionary Algorithms,Harris Hawk Optimization,Multilevel Image Thresholding" data-listing-date-sort="1683052200000" data-listing-file-modified-sort="1736592411169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./publications/modifiedHHO/index.html"> <img src="./publications/modifiedHHO/figure.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./publications/modifiedHHO/index.html">
+<h3 class="no-anchor listing-title">
+Modified Harris Hawk Optimization Algorithm for Multi-level Image Thresholding
+</h3>
+<div class="listing-subtitle">
 
-<div class="quarto-title-meta">
+</div>
+<div class="listing-description">
+<p>The article introduces a Modified Harris Hawks Optimization (HHO) Algorithm designed to enhance thresholding in grayscale images. Inspired by the hunting strategies of Harris Hawks, the original HHO algorithm has proven effective in solving diverse optimization problems. Building on this foundation, the proposed modifications aim to improve its adaptability and overall performance.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/modifiedHHO/index.html">
+<div class="listing-date">
+May 3, 2023
+</div>
+<div class="listing-author">
+Soumyaratna Debnath, Abhirup Deb, Sourav De, Sandip Dey
+</div>
+<div class="metadata-value listing-journal_name">
+<b>Hybrid Computational Intelligent Systems Modeling, Simulation and Optimization</b>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="Copyright,Data Encryption,Image Processing" data-listing-date-sort="1661365800000" data-listing-file-modified-sort="1736592234634" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./publications/picrypt/index.html"> <img src="./publications/picrypt/certificate-sm.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./publications/picrypt/index.html">
+<h3 class="no-anchor listing-title">
+Picrypt - Inscribe Images with Encrypted Texts
+</h3>
+<div class="listing-subtitle">
 
-    
-  
-    
-  </div>
-  
+</div>
+<div class="listing-description">
+<p>Picrypt is a simple, user-friendly tool that lets you hide passcode-protected messages inside digital color images. You can save these encrypted images locally and share them anywhere, keeping your messages secure and accessible only to the intended recipient with the right passcode.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/picrypt/index.html">
+<div class="listing-date">
+Aug 25, 2022
+</div>
+<div class="listing-author">
+Soumyaratna Debnath, Sourav De, Siddhartha B.
+</div>
+<div class="metadata-value listing-journal_name">
+<b>Government of India</b>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="Copyright,Data Encryption,Image Processing" data-listing-date-sort="1621535400000" data-listing-file-modified-sort="1736592224345" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./publications/camerashot/index.html"> <img src="./publications/camerashot/certificate-sm.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./publications/camerashot/index.html">
+<h3 class="no-anchor listing-title">
+CameraSHOT
+</h3>
+<div class="listing-subtitle">
 
-</header>
+</div>
+<div class="listing-description">
+<p>CameraSHOT is a simple yet powerful application that automatically analyzes an image’s theme or color scheme and seamlessly alters it with minimal user input. Inspired by Windows’ adaptive theme feature, which picks accent colors from desktop backgrounds, CameraSHOT goes a step further by reimagining the image’s existing color palette for a fresh look.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/camerashot/index.html">
+<div class="listing-date">
+May 21, 2021
+</div>
+<div class="listing-author">
+Soumyaratna Debnath, Sourav De, Siddhartha B.
+</div>
+<div class="metadata-value listing-journal_name">
+<b>Government of India</b>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="Meta-Herustics,Evolutionary Algorithms,Particle Swarm Optimization,Red Deer Algorithm,Multilevel Image Thresholding" data-listing-date-sort="1615746600000" data-listing-file-modified-sort="1736592459670" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./publications/modifiedRDA-2/index.html"> <p class="card-img-top"><img src="publications\modifiedRDA-2\image.png"  class="thumbnail-image card-img"/></p> </a></p>
+</div>
+<div class="body">
+<a href="./publications/modifiedRDA-2/index.html">
+<h3 class="no-anchor listing-title">
+Multilevel Image Segmentation Using Modified Red Deer Algorithm
+</h3>
+<div class="listing-subtitle">
 
+</div>
+<div class="listing-description">
+<p>This paper introduces a Modified Red Deer Algorithm (MRDA) using an evolution strategy to optimize segmentation for grayscale images. Inspired by the behavior of red deer during their breeding season, the original Red Deer Algorithm (RDA) is a well-known meta-heuristic for solving complex optimization problems.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/modifiedRDA-2/index.html">
+<div class="listing-date">
+Mar 15, 2021
+</div>
+<div class="listing-author">
+Sandip Dey, Sourav De, Abhirup Deb, Soumyaratna Debnath
+</div>
+<div class="metadata-value listing-journal_name">
+<b>2021 11th International Conference on Cloud Computing, Data Science &amp; Engineering (Confluence)</b>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="Meta-Herustics,Evolutionary Algorithms,Genetic Algorithm,Red Deer Algorithm,Multilevel Image Thresholding" data-listing-date-sort="1608489000000" data-listing-file-modified-sort="1736592368708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./publications/modifiedRDA-1/index.html"> <p class="card-img-top"><img src="publications\modifiedRDA-1\image.png"  class="thumbnail-image card-img"/></p> </a></p>
+</div>
+<div class="body">
+<a href="./publications/modifiedRDA-1/index.html">
+<h3 class="no-anchor listing-title">
+A New Modified Red Deer Algorithm for Multi-level Image Thresholding
+</h3>
+<div class="listing-subtitle">
 
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="Meta-Herustics,Evolutionary Algorithms,Harris Hawk Optimization,Multilevel Image Thresholding" data-listing-date-sort="1683052200000" data-listing-file-modified-sort="1698111956107" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Modified Harris Hawk Optimization Algorithm for Multi-level Image Thresholding" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">May 3, 2023</span>
-</td>
-<td>
-<a href="./publications/modifiedHHO/index.html" class="title listing-title">Modified Harris Hawk Optimization Algorithm for Multi-level Image Thresholding</a>
-</td>
-<td>
-<span class="listing-author">Soumyaratna Debnath, Abhirup Deb, Sourav De</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="Copyright,Data Encryption,Image Processing" data-listing-date-sort="1661365800000" data-listing-file-modified-sort="1720267633321" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Picrypt - Inscribe Images with Encrypted Texts" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Aug 25, 2022</span>
-</td>
-<td>
-<a href="./publications/picrypt/index.html" class="title listing-title">Picrypt - Inscribe Images with Encrypted Texts</a>
-</td>
-<td>
-<span class="listing-author">Soumyaratna Debnath, Sourav De, Siddhartha B.</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="Meta-Herustics,Evolutionary Algorithms,Particle Swarm Optimization,Red Deer Algorithm,Multilevel Image Thresholding" data-listing-date-sort="1615746600000" data-listing-file-modified-sort="1698108081136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Multilevel Image Segmentation Using Modified Red Deer Algorithm" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Mar 15, 2021</span>
-</td>
-<td>
-<a href="./publications/modifiedRDA-2/index.html" class="title listing-title">Multilevel Image Segmentation Using Modified Red Deer Algorithm</a>
-</td>
-<td>
-<span class="listing-author">Sandip Dey, Sourav De, Abhirup Deb, Soumyaratna Debnath</span>
-</td>
-</tr>
-<tr data-index="3" data-categories="Meta-Herustics,Evolutionary Algorithms,Genetic Algorithm,Red Deer Algorithm,Multilevel Image Thresholding" data-listing-date-sort="1608489000000" data-listing-file-modified-sort="1698107875143" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="A New Modified Red Deer Algorithm for Multi-level Image Thresholding" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Dec 21, 2020</span>
-</td>
-<td>
-<a href="./publications/modifiedRDA-1/index.html" class="title listing-title">A New Modified Red Deer Algorithm for Multi-level Image Thresholding</a>
-</td>
-<td>
-<span class="listing-author">Sourav De, Sandip Dey, Soumyaratna Debnath, Abhirup Deb</span>
-</td>
-</tr>
-</tbody>
-
-</table>
+</div>
+<div class="listing-description">
+<p>This paper introduces a Modified Red Deer Algorithm (MRDA) using an evolution strategy to optimize threshold selection for grayscale images. Inspired by the behavior of red deer during their breeding season, the original Red Deer Algorithm (RDA) is a well-known meta-heuristic for solving complex optimization problems.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./publications/modifiedRDA-1/index.html">
+<div class="listing-date">
+Dec 21, 2020
+</div>
+<div class="listing-author">
+Sourav De, Sandip Dey, Soumyaratna Debnath, Abhirup Deb
+</div>
+<div class="metadata-value listing-journal_name">
+<b>2020 Fifth International Conference on Research in Computational Intelligence and Communication Networks (ICRCICN)</b>
+</div>
+</a>
+</div>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>

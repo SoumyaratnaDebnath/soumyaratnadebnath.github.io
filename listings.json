@@ -2,18 +2,13 @@
   {
     "listing": "/publications.html",
     "items": [
+      "/publications/l3dpose/index.html",
+      "/publications/scribgen/index.html",
       "/publications/modifiedHHO/index.html",
       "/publications/picrypt/index.html",
+      "/publications/camerashot/index.html",
       "/publications/modifiedRDA-2/index.html",
       "/publications/modifiedRDA-1/index.html"
-    ]
-  },
-  {
-    "listing": "/blogs.html",
-    "items": [
-      "/blogs/Byte by Byte Vision/index.html",
-      "/blogs/Topic-On-Games-Class-Notes/index.html",
-      "/blogs/IITGN-Algorithms-Class-Notes/index.html"
     ]
   },
   {
@@ -29,6 +24,14 @@
       "/projects/October Virtual Mouse/index.html",
       "/projects/Image Stitching from Scratch/index.html",
       "/projects/Histogram Matching from Scratch/index.html"
+    ]
+  },
+  {
+    "listing": "/blogs.html",
+    "items": [
+      "/blogs/Byte by Byte Vision/index.html",
+      "/blogs/Topic-On-Games-Class-Notes/index.html",
+      "/blogs/IITGN-Algorithms-Class-Notes/index.html"
     ]
   }
 ]
