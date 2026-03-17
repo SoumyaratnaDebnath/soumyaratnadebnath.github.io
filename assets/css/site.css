@@ -1958,6 +1958,11 @@ pre,
     padding: 0.85rem;
   }
 
+  body[data-page="home"] .home-name-card .quarto-title,
+  body[data-page="home"] .home-name-card .title {
+    text-align: center;
+  }
+
   body[data-page="home"] .home-news-list {
     gap: 0.68rem;
   }
