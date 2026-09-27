@@ -531,13 +531,15 @@
       const dateNode = card.querySelector(".listing-date");
       const authorNode = card.querySelector(".listing-author");
       const venueNode = card.querySelector(".listing-journal_name");
+      const highlightNode = card.querySelector(".highlight-badge");
 
       const item = {
         href: bodyLink.getAttribute("href") || "#",
         title: titleNode ? titleNode.textContent.trim() : "Untitled",
         date: dateNode ? dateNode.textContent.trim() : "",
         authors: authorNode ? authorNode.textContent.trim() : "",
-        venue: venueNode ? venueNode.textContent.replace(/\s+/g, " ").trim() : ""
+        venue: venueNode ? (venueNode.querySelector("b") || venueNode).textContent.replace(/\s+/g, " ").trim() : "",
+        highlight: highlightNode ? highlightNode.textContent.replace(/\s+/g, " ").trim() : ""
       };
 
       if (!grouped.has(year)) {
@@ -605,6 +607,12 @@
           venue.className = "pub-venue";
           venue.textContent = entry.venue;
           meta.appendChild(venue);
+          if (entry.highlight) {
+            const label = document.createElement("span");
+            label.className = "pub-tag-highlight";
+            label.textContent = entry.highlight;
+            meta.appendChild(label);
+          }
         }
 
         const authors = document.createElement("p");
